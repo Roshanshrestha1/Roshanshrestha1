@@ -1,0 +1,89 @@
+/* chart.css */
+
+/* Body and layout styling */
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  line-height: 1.6;
+}
+
+/* Section wrapper */
+.section {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  color: #93c5fd;
+  animation: glowText 2s ease-in-out infinite alternate;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #a78bfa;
+  border-left: 4px solid #60a5fa;
+  padding-left: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Chart Canvas Styling */
+canvas {
+  max-width: 500px;
+  margin: 2rem auto;
+  display: block;
+  animation: scaleIn 1.2s ease-in-out;
+}
+
+/* List styling */
+ul {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  color: #d1d5db;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes glowText {
+  from {
+    text-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6;
+  }
+  to {
+    text-shadow: 0 0 20px #2563eb, 0 0 30px #2563eb;
+  }
+}

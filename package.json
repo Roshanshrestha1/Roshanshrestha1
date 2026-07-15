@@ -1,0 +1,71 @@
+{
+  "name": "roshan-shrestha-portfolio",
+  "version": "2.0.0",
+  "description": "Professional portfolio website for Roshan Shrestha - Full-Stack Developer & Cybersecurity Expert",
+  "main": "index.html",
+  "homepage": "https://roshanshrestha1.github.io/Roshanshrestha1/",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'No build process needed for static site'",
+    "deploy": "echo 'Deploy to GitHub Pages or your preferred hosting service'",
+    "lint": "echo 'Add linting tools if needed'",
+    "test": "echo 'Add testing framework if needed'"
+  },
+  "keywords": [
+    "portfolio",
+    "web-development",
+    "cybersecurity",
+    "full-stack",
+    "react",
+    "nodejs",
+    "javascript",
+    "html",
+    "css",
+    "ethical-hacking"
+  ],
+  "author": {
+    "name": "Roshan Shrestha",
+    "email": "roshanshrestha9821533789@gmail.com",
+    "url": "https://github.com/Roshanshrestha1"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Roshanshrestha1/Roshanshrestha1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Roshanshrestha1/Roshanshrestha1/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.0"
+  },
+  "devDependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "features": [
+    "Responsive Design",
+    "Dark/Light Theme Toggle",
+    "Interactive Animations",
+    "Skill Visualizations",
+    "Contact Form",
+    "Mobile-First Design",
+    "SEO Optimized",
+    "Performance Optimized",
+    "Accessibility Features"
+  ],
+  "technologies": [
+    "HTML5",
+    "CSS3",
+    "JavaScript (ES6+)",
+    "Chart.js",
+    "Font Awesome",
+    "Google Fonts"
+  ]
+} 

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roshan's Skill & Passion Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/chart.css">
+</head>
+<body>
+
+  <h1>👨‍💻 Roshan Shrestha</h1>
+
+  <div class="section">
+    <h2>🚀 My Passion & Vision</h2>
+    <p>I am deeply passionate about building secure, beautiful, and highly functional web applications that make an impact. From designing the UI to securing the backend, I enjoy the entire lifecycle of development. I believe technology should solve real-world problems and empower people.</p>
+    <p>💡 My ultimate aim is to become a cybersecurity expert who not only builds applications but also secures them. I want to help organizations protect their data and users by developing secure systems and ethical hacking techniques.</p>
+    <p>I am constantly learning and exploring new tech stacks, tools, and operating systems like Kali Linux and Parrot OS to expand my skillset and stay ahead in the ever-evolving digital world.</p>
+  </div>
+
+  <div class="section">
+    <h2>📊 Skill Distribution</h2>
+    <canvas id="skillChart"></canvas>
+  </div>
+
+  <div class="section">
+    <h2>🎯 My Focus Areas</h2>
+    <ul>
+      <li>🌐 Web Development – Frontend & Backend</li>
+      <li>🛡️ Ethical Hacking – Penetration Testing, Network Attacks</li>
+      <li>📶 Wi-Fi Security – Password Cracking, Packet Sniffing</li>
+      <li>⚙️ Application Development – Full Stack Projects</li>
+      <li>🐧 Linux OS Mastery – Kali Linux, Parrot OS</li>
+      <li>🔁 Automation – Scripting with Bash & Python</li>
+      <li>🎨 UI/UX Design – Clean and Accessible Interfaces</li>
+    </ul>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('skillChart').getContext('2d');
+    const skillChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: [
+          'Web Development',
+          'Ethical Hacking',
+          'Application Development',
+          'Wi-Fi Security',
+          'Linux & OS Mastery',
+          'Automation & Scripting'
+        ],
+        datasets: [{
+          data: [30, 20, 15, 15, 10, 10],
+          backgroundColor: [
+            '#4ade80',
+            '#60a5fa',
+            '#facc15',
+            '#f472b6',
+            '#a78bfa',
+            '#f87171'
+          ],
+          borderColor: '#0d1117',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        animation: {
+          animateRotate: true,
+          duration: 2000,
+          easing: 'easeInOutQuart'
+        },
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              color: '#c9d1d9'
+            }
+          },
+          tooltip: {
+            backgroundColor: '#222',
+            titleColor: '#a78bfa',
+            bodyColor: '#ddd',
+            borderColor: '#a78bfa',
+            borderWidth: 1
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
