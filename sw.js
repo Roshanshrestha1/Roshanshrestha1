@@ -43,7 +43,11 @@ self.addEventListener('activate', (event) => {
 });
 
 // Fetch: try the network first, fall back to cache on failure.
-// Cache successful same-origin GETs opportunistically.
+// Cache successful same-origin GETs opportunistically. Only fall
+// back to the offline HTML shell for navigation requests — sub-
+// resources (CSS/JS/images) must NOT receive an HTML body as a
+// recovery response, or the page will be served with the wrong
+// content-type and break outright.
 self.addEventListener('fetch', (event) => {
   const req = event.request;
   if (req.method !== 'GET') return;
@@ -53,7 +57,12 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     fetch(req)
       .then((res) => {
-        if (res && res.ok) {
+        if (
+          res &&
+          res.ok &&
+          res.status === 200 &&
+          res.type !== 'opaqueredirect'
+        ) {
           const copy = res.clone();
           caches.open(CACHE_NAME)
             .then((cache) => cache.put(req, copy))
@@ -62,7 +71,12 @@ self.addEventListener('fetch', (event) => {
         return res;
       })
       .catch(() =>
-        caches.match(req).then((cached) => cached || caches.match('/index.html'))
+        caches.match(req).then((cached) =>
+          cached ||
+            (req.mode === 'navigate'
+              ? caches.match('/index.html')
+              : Response.error())
+        )
       )
   );
 });
